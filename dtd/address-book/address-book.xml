@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address-book SYSTEM "address-book.dtd">
+<address-book>
+   <entry>
+      <name>John Doe</name>
+      <address preferred="false">
+         <street>34 Fountain Square Plaza</street>
+         <region>Cincinnati</region>
+         <locality>OH</locality>
+         <postal-code>46782</postal-code>
+         <country>USA</country>
+      </address>
+      <tel preferred="true">513-565-7878</tel>
+      <fax preferred="false">513-56-6789</fax>
+      <email href="jdoe@email.com" preferred="false" />
+   </entry>
+   <entry>
+      <name>Jack Smith</name>
+      <tel preferred="false">513-565-4567</tel>      
+      <email href="jsmith@email.com" preferred="false" />
+   </entry>
+</address-book>

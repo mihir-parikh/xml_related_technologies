@@ -1,0 +1,19 @@
+<!ELEMENT address-book (entry+)>
+<!ELEMENT entry (name,address*,tel*,fax*,email*)>
+<!ELEMENT name (#PCDATA|fname|lname)*>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT address (street,region?,locality,postal-code,country)>
+<!ATTLIST address preferred (true|false) "false">
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT postal-code (#PCDATA)>
+<!ELEMENT locality (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ATTLIST tel preferred (true|false) "false">
+<!ELEMENT fax (#PCDATA)>
+<!ATTLIST fax preferred (true|false) "false">
+<!ELEMENT email EMPTY>
+<!ATTLIST email href CDATA #REQUIRED
+preferred (true|false) "false">
