@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="title" type="xs:string" />
+   
+   <xs:element name="author" type="xs:string" />
+   
+   <xs:element name="name" type="xs:string" />
+   <xs:element name="friend-of" type="xs:string" />
+   <xs:element name="since" type="xs:date" />
+   <xs:element name="qualification" type="xs:string" />
+   
+   <xs:element name="character">
+      <xs:complexType mixed="true">
+         <xs:sequence>
+            <xs:element ref="name" />
+            <xs:element ref="friend-of" minOccurs="0" />
+            <xs:element ref="since" />
+            <xs:element ref="qualification" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>   
+   
+   <xs:attribute name="isbn" type="xs:string" />
+    
+   <xs:element name="book">
+       <xs:complexType mixed="true"> 
+         <xs:sequence>
+            <xs:element ref="title" />
+            <xs:element ref="author" />            
+            <xs:element ref="character" maxOccurs="2" />
+         </xs:sequence> 
+         <xs:attribute ref="isbn" />         
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
