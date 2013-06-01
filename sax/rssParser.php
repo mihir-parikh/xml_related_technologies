@@ -1,14 +1,23 @@
 <?php
 class RSSParser{
-   private $isInsideItem = false;
-   private $headline = ""; 
-   private $itemCount = 0;
-   private $headlines = array();
-   private $tag = "";
+   private $isInsideItem;
+   private $headline; 
+   private $itemCount;
+   private $headlines;
+   private $tag;
+   
+   public function __construct(){
+      $this->isInsideItem = false;
+      $this->headline = "";
+      $this->itemCount = 0;
+      $this->headlines = array();
+      $this->tag = "";
+   }
    
    //Start tag event handler
    public function startElement($parser, $tagName){
       if($this->isInsideItem){
+         //Assign element name inside <item> to the variable
          $this->tag = $tagName;
       }
       else if($tagName == "ITEM" || $tagName == "item"){
@@ -34,8 +43,10 @@ class RSSParser{
          //Cleanup the data
          $this->headline = strip_tags(trim($this->headline));
          
-         //Assignin processed element to the array
-         $this->headlines['headline'] = $this->headline;
+         //Assigning processed element to the array
+         $this->headlines[$this->itemCount]['headline'] = $this->headline;
+         
+         $this->itemCount++;
          
          //Reset variables and tags
          $this->isInsideItem = false;         

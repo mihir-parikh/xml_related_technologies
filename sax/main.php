@@ -30,6 +30,6 @@ xml_parser_free($builtInParser);
 $headlines = $customRSSParser->getHeadlines();
 
 foreach ($headlines as $headline){
-   print_r($headline);
+   echo "<pre>".var_dump($headline)."</pre>";
 }
 ?>
