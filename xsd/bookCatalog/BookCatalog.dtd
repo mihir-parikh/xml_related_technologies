@@ -1,0 +1,16 @@
+<!-- BookCatalog information -->
+<!ELEMENT BookCatalog (Book)+>
+<!-- Book information -->
+<!ELEMENT Book (Title,Authors,Publisher,DatePublished,Price)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Authors (Author)+>
+<!ELEMENT Author (#PCDATA)>
+<!ELEMENT Publisher (#PCDATA) >
+<!ELEMENT DatePublished (#PCDATA) >
+<!ELEMENT Price (#PCDATA) >
+<!-- attributes of BookCatalog: category is required -->
+<!ATTLIST BookCatalog category CDATA #REQUIRED >
+<!-- attributes of Book: ISBN is unique, Edition is required -->
+<!ATTLIST Book ISBN ID #REQUIRED Edition CDATA #REQUIRED >
+<!-- attributes of Title, Series is optional -->
+<!ATTLIST Title Series CDATA #IMPLIED>

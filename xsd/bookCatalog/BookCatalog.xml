@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<BookCatalog xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+			 xsi:noNamespaceSchemaLocation = "bookCatalog.xsd"
+			 category="XML Essentials">
+	<Book ISBN="ISBN-0-47-141259-7" Edition="Second">
+		<ISBN>0471412597</ISBN>
+		<Title>XML Schema Essentials</Title>
+		<Authors>
+			<Author>R. Allen Wyke</Author>
+			<Author>Andrew Watt</Author>
+		</Authors>
+		<Publisher>John Wiley</Publisher>
+		<DatePublished>2002-02</DatePublished>
+		<Price>44.99</Price>
+	</Book>
+	<Book ISBN="ISBN-0-47-120548-6" Edition="Third">
+		<Title>XPath Essentials</Title>
+		<Authors>
+			<Author>Andrew Watt</Author>
+		</Authors>
+		<Publisher>John Wiley</Publisher>
+		<DatePublished>2001-10</DatePublished>
+		<Price>49.99</Price>
+	</Book>
+	<Book ISBN="ISBN-0-67-232479-2" Edition="First">
+		<Title Series="XQuery">XQuery Kick Start</Title>
+		<Authors>
+			<Author>James McGovern</Author>
+			<Author>Per Bothner</Author>
+			<Author>Kurt Cagle</Author>
+			<Author>James Linn</Author>
+			<Author>Vaidyanathan Nagarajan</Author>
+		</Authors>
+		<Publisher>John Wiley</Publisher>
+		<DatePublished>2003-09</DatePublished>
+		<Price>34.99</Price>
+	</Book>
+</BookCatalog>
