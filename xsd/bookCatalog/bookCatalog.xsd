@@ -1,59 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-   <!-- Garden of Eden design pattern -->
-   
-   <xs:complexType name="ISBNType">
-      <xs:sequence>      
-         <xs:element ref="ISBN" minOccurs="0" type="xs:string" />
-      </xs:sequence>      
-   </xs:complexType>
-   <xs:element name="ISBN" type="xs:ISBNType" />   
+   <!-- Garden of Eden design pattern -->    
    
    <xs:attribute name="Series" type="xs:string" />
    <xs:complexType name="TitleType" mixed="true">
-      <xs:attribute ref="Series" minOccurs="0" />
+      <xs:attribute ref="Series" use="optional" />
    </xs:complexType>
-   <xs:element name="Title" type="xs:TitleType" />
+   <xs:element name="Title" type="TitleType" />
    
    <xs:element name="Author" type="xs:string" />
       
-   <xs:complexType name="AuthorsType" mixed="true">      
-      <xs:element ref="Author" minOccurs="1" maxOccurs="unbounded" />
+   <xs:complexType name="AuthorsType" mixed="true">
+      <xs:sequence>      
+         <xs:element ref="Author" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
    </xs:complexType>
    <xs:element name="Authors" type="AuthorsType" />
    
    <xs:element name="Publisher" type="xs:string" />
-   <xs:element name="DatePublished" type="xs:string" />
-   <xs:element name="Price" type="xs:string" />
+   <xs:element name="DatePublished" type="xs:gYearMonth" />
+   <xs:element name="Price" type="xs:decimal" />
    
    <xs:simpleType name="ISBNType">
-      <xs:restriction base="xs:string">
-         <xs:pattern value="/ISBN-[0-9]{1}-[0-9]{2}-[0-9]{6}-[0-9]{1}/" />
+      <xs:restriction base="xs:ID">
+         <xs:pattern value="ISBN-[0-9]{1}-[0-9]{2}-[0-9]{6}-[0-9]{1}" />
       </xs:restriction>
    </xs:simpleType>
-   <xs:attribute type="ISBNType" />
-   
-   <xs:attribute name="ISBN" type="xs:string" />
+   <xs:attribute name="ISBN" type="ISBNType" />
+      
    <xs:attribute name="Edition" type="xs:string" />
    <xs:complexType name="BookType" mixed="true">
-      <xs:sequence>
-	      <xs:element ref="ISBN" minOccurs="0" />
+      <xs:sequence>	      
 	      <xs:element ref="Title" />
 	      <xs:element ref="Authors" />
 	      <xs:element ref="Publisher" />
 	      <xs:element ref="DatePublished" />
 	      <xs:element ref="Price" />
       </xs:sequence>
-      <xs:attribute ref="ISBN" />
-      <xs:attribute ref="Edition" />
+      <xs:attribute ref="ISBN" use="required" />
+      <xs:attribute ref="Edition" use="required" />
    </xs:complexType>
    <xs:element name="Book" type="BookType" />   
    
    <xs:attribute name="category" type="xs:string" />
    <xs:complexType name="BookCatalogType" mixed="true">
-      <xs:element ref="Book" maxOccurs="unbounded" />
-      <xs:attribute ref="category" />
+      <xs:sequence>
+         <xs:element ref="Book" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute ref="category" use="required" />
    </xs:complexType>    
-   <xs:element name="BookCatalog" type="xs:BookCatalogType" />
+   <xs:element name="BookCatalog" type="BookCatalogType" />
 </xs:schema>

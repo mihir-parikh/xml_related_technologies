@@ -2,8 +2,7 @@
 <BookCatalog xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
 			 xsi:noNamespaceSchemaLocation = "bookCatalog.xsd"
 			 category="XML Essentials">
-	<Book ISBN="ISBN-0-47-141259-7" Edition="Second">
-		<ISBN>0471412597</ISBN>
+	<Book ISBN="ISBN-0-47-141259-7" Edition="Second">		
 		<Title>XML Schema Essentials</Title>
 		<Authors>
 			<Author>R. Allen Wyke</Author>
