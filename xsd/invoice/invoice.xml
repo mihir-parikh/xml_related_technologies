@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- <!DOCTYPE invoice SYSTEM "invoice.dtd" > -->
+<invoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="invoice.xsd">
+	<customer>
+		<name>
+			<firstname>James</firstname>
+			<lastname>Thom</lastname>
+		</name>
+		<contact>
+			<phone>99259229</phone>
+		</contact>
+	</customer>
+	<item>
+		<quantity>2</quantity>
+		<price>10</price>
+	</item>
+	<item onsale="15.00">
+		<quantity>1</quantity>
+		<price>22</price>
+	</item>
+	<total>35.00</total>
+</invoice>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Garden of Eden design pattern -->
+
+	<xs:complexType name="invoiceType">
+		<xs:sequence>
+			<xs:element ref="customer" />
+			<xs:element ref="item" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="total" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="invoice" type="invoiceType" />
+
+	<xs:complexType name="customerType">
+		<xs:sequence>
+			<xs:element ref="name" />
+			<xs:element ref="contact" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="customer" type="customerType" />
+
+	<xs:complexType name="nameType">
+		<xs:sequence>
+			<xs:element ref="firstname" />
+			<xs:element ref="lastname" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="name" type="nameType" />
+
+	<xs:complexType name="contactType">
+		<xs:sequence>
+			<xs:choice minOccurs="1">
+				<xs:element ref="phone" />
+				<xs:element ref="email" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="contact" type="contactType" />
+
+	<xs:complexType name="itemType">
+		<xs:sequence>
+			<xs:element ref="quantity" />
+			<xs:element ref="price" />
+		</xs:sequence>
+		<xs:attribute ref="onsale" use="optional" />
+	</xs:complexType>
+	<xs:element name="item" type="itemType" />
+	<xs:attribute name="onsale" type="xs:string" />
+
+	<xs:element name="price" type="xs:string" />
+	<xs:element name="quantity" type="xs:string" />
+	<xs:element name="firstname" type="xs:string" />
+	<xs:element name="lastname" type="xs:string" />
+	<xs:element name="phone" type="xs:string" />
+	<xs:element name="email" type="xs:string" />
+	<xs:element name="total" type="xs:string" />
+</xs:schema>

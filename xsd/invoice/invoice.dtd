@@ -1,0 +1,13 @@
+<!ELEMENT invoice (customer, item+, total)>
+<!ELEMENT customer (name, contact)>
+<!ELEMENT name (firstname, lastname)>
+<!ELEMENT contact (phone | email)>
+<!ELEMENT item (quantity, price)>
+<!ATTLIST item onsale CDATA #IMPLIED >
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT total (#PCDATA)>
