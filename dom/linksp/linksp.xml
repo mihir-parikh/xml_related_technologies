@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<searchEngines>
+  <site>
+    <name>Google</name>
+    <url>http://google.com</url>
+  </site>
+  <site>
+    <name>Yahoo</name>
+    <url>http://yahoo.com</url>
+  </site>
+</searchEngines>
