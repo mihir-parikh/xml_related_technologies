@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <!-- Garden of Eden design pattern -->   
+   
+   <xs:element name="quotes" type="quotesType" />   
+   <xs:complexType name="quotesType">
+      <xs:sequence>
+         <xs:element ref="quotes" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attibute ref="version" use="required" />
+   </xs:complexType>
+   <xs:attribute name="version" type="versionType" />
+   <xs:simpleType name="versionType" base="xs:string">
+      <xs:restriction>
+         <xs:pattern value="draft|final" />
+      </xs:restriction>
+   </xs:simpleType>
+   
+   <xs:element name="quote" type="quoteType" />
+   <xs:complexType name="quoteType">
+      <xs:sequence>
+         <xs:element ref="play" />
+         <xs:element ref="speaker" />
+         <xs:element ref="quote_text" />
+      </xs:sequence>
+      <xs:attibute ref="act" use="required" />
+      <xs:attibute ref="scene" use="required" />
+   </xs:complexType>
+   <xs:element name="quote" type="xs:string" />
+   <xs:element name="speaker" type="xs:string" />
+   <xs:element name="quote_text" type="xs:string" />
+   <xs:attribute name="act" type="numberType" />
+   <xs:attribute name="scene" type="numberType" />
+   <xs:simpleType name="numberType" base="xs:integer">
+      <xs:restriction>
+         <xs:pattern value="1-10" />
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

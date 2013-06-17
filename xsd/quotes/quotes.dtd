@@ -1,0 +1,8 @@
+<!ELEMENT quotes (quote)+ >
+<!ATTLIST quotes version (draft|final) #REQUIRED >
+<!ELEMENT quote (play, speaker, quote_text) >
+<!ATTLIST quote act CDATA #REQUIRED
+scene CDATA #REQUIRED>
+<!ELEMENT play (#PCDATA) >
+<!ELEMENT speaker (#PCDATA) >
+<!ELEMENT quote_text (#PCDATA) >
