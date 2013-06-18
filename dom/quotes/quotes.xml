@@ -1,0 +1,25 @@
+<quotes version="draft">
+	<quote act="1" scene="9">
+		<play>The Taming of the Shrew</play>
+		<speaker>LUCENTIO</speaker>
+		<quote_text>
+			Here let us breathe and haply institute
+			A course of
+			learning and ingenious studies.
+		</quote_text>
+	</quote>
+	<quote act="2" scene="1">
+		<play>The Tragedy of Macbeth</play>
+		<speaker>FLEANCE</speaker>
+		<quote_text>
+			The moon is down; I have not heard the clock.
+		</quote_text>
+	</quote>
+	<quote act="5" scene="2">
+		<play>The Taming of the Shrew</play>
+		<speaker>KATHARINA</speaker>
+		<quote_text>
+			Muddy, ill-seeming, thick, bereft of beauty;
+		</quote_text>
+	</quote>
+</quotes>
