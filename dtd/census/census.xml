@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF‐8" ?>
+<!DOCTYPE census SYSTEM "census.dtd">
+<census‐record>
+	<date>
+		<year>2003</year>
+		<month>10</month>
+		<day>11</day>
+	</date>
+	<address>
+		<street>471 Skipstone Lane</street>
+		<city>Emerald City</city>
+		<country>Oz</country>
+		<postalcode>3158</postalcode>
+	</address>
+	<person gender="male" pid="P270405">
+		<name>
+			<first>Meeble</first>
+			<last>Bigbug</last>
+		</name>
+		<age>39</age>
+	</person>
+	<person gender="female" pid="P273882">
+		<name>
+			<first>Mable</first>
+			<last>Bigbug</last>
+		</name>
+		<age>36</age>
+	</person>
+	<person gender="male" pid="P472891">
+		<name>
+			<first>Marble</first>
+			<last>Bigbug</last>
+		</name>
+		<age>11</age>
+	</person>
+</census‐record>
