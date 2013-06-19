@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <!-- Garden of Eden design pattern -->
+   <xs:element name="census" type="censusType" />
+   <xs:complexType name="censusType">
+      <xs:sequence>
+         <xs:element ref="date" />
+         <xs:element ref="address" />
+         <xs:element ref="person" minOccurs="1" />
+      </xs:sequence>   
+   </xs:complexType>
+   
+   <xs:element name="date" type="dateType" />
+   <xs:complexType name="dateType">
+      <xs:sequence>
+         <xs:element ref="year" />
+         <xs:element ref="month" />
+         <xs:element ref="day" />
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:element name="year" type="xs:integer" />
+   
+   <xs:element name="month" type="xs:integer" />
+   
+   <xs:element name="day" type="xs:integer" />
+   
+   <xs:element name="address" type="addressType" />
+   <xs:complexType name="addressType">
+      <xs:sequence>
+         <xs:element ref="street" />
+         <xs:element ref="city" />
+         <xs:element ref="country" />
+         <xs:element ref="postalcode" />         
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:element name="street" type="xs:string" />
+   
+   <xs:element name="city" type="xs:string" />
+   
+   <xs:element name="country" type="xs:string" />
+   
+   <xs:element name="postalcode" type="xs:integer" />
+   
+   <xs:element name="person" type="personType" />
+   <xs:complexType name="personType">
+      <xs:sequence>
+         <xs:element ref="name" />
+         <xs:element ref="age" />
+      </xs:sequence>
+      <xs:attribute ref="gender" use="optional" />
+      <xs:attribute ref="pid" use="required" />
+   </xs:complexType>
+   
+   <xs:attribute name="gender" type="genderType" />
+   <xs:simpleType name="genderType" base="xs:string">
+      <xs:restriction>
+         <xs:pattern value="male|female" />
+      </xs:restriction>
+   </xs:simpleType>
+   
+   <xs:attribute name="pid" type="xs:id" />
+   
+   <xs:element name="name" type="nameType" />
+   <xs:complexType name="nameType">
+      <xs:element ref="first" />
+      <xs:element ref="last" />
+   </xs:complexType>
+   
+   <xs:element name="first" type="xs:string" />
+   
+   <xs:element name="last" type="xs:string" />
+   
+   <xs:element name="age" type="ageType" />
+   <xs:simpleType base="xs:integer" name="ageType">
+      <xs:restriction>
+         <xs:pattern value="[0-200]" />
+      </xs:restriction>
+   </xs:simpleType>
+   
+   
+</xs:schema>
