@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF‐8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE census SYSTEM "census.dtd">
-<census‐record>
+<census>
 	<date>
 		<year>2003</year>
 		<month>10</month>
@@ -33,4 +33,4 @@
 		</name>
 		<age>11</age>
 	</person>
-</census‐record>
+</census>

@@ -1,21 +1,21 @@
-<ELEMENT census-record (date, address, person+)>
+<!ELEMENT census (date, address, person+)>
 
-<ELEMENT date (year, month, day)>
-<ELEMENT year #PCDATA>
-<ELEMENT month #PCDATA>
-<ELEMENT day #PCDATA>
+<!ELEMENT date (year, month, day)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT day (#PCDATA)>
 
-<ELEMENT address (street, city, country, postalcode)>
-<ELEMENT street #PCDATA>
-<ELEMENT city #PCDATA>
-<ELEMENT country #PCDATA>
-<ELEMENT postalcode #PCDATA>
+<!ELEMENT address (street, city, country, postalcode)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT postalcode (#PCDATA)>
 
-<ELEMENT person (name, age)>
-<ATTLIST person gender #PCDATA #REQUIRED>
-<ATTLIST person pid #PCDATA #REQUIRED>
-<ELEMENT name (first, last)>
-<ELEMENT first #PCDATA>
-<ELEMENT last #PCDATA>
-<ELEMENT age #PCDATA>
+<!ELEMENT person (name, age)>
+<!ATTLIST person gender (male|female) #REQUIRED>
+<!ATTLIST person pid CDATA #REQUIRED>
+<!ELEMENT name (first, last)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT last (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
 
