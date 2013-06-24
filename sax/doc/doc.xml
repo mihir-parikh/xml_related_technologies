@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document title="red" canvas="yellow">
+	<section>
+		<title>First section</title>
+		<p>
+			<sentence>Some text.</sentence>
+			<sentence>More text.</sentence>
+		</p>
+	</section>
+	<section>
+		<title>Second section</title>
+		<p>Another paragraph.</p>
+		<p>Yet more paragraph.</p>
+	</section>
+	<section>
+		<title>Third section</title>
+		<p>Another text.</p>
+		<p>
+			<sentence>Yet more text.</sentence>
+		</p>
+	</section>
+</document>
