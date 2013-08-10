@@ -1,0 +1,85 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<!-- The xml schema is developed using the Garden of Eden design pattern -->
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+	<!-- Attribute Extension has to be maximum 4 chars in length and should start with 6 -->
+	<xs:simpleType name="ExtensionRestrictions">
+		<xs:restriction base="xs:string">
+			<!-- Regular expression for: The value should be 4 chars in length -->
+			<xs:pattern value="[0-9]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- As a rule of Garden of Eden design pattern, declaring attirbutes globally -->
+	<xs:attribute name="EmailAlias" type="xs:string" />
+	<xs:attribute name="Extension" type="ExtensionRestrictions" />
+	<xs:complexType mixed="true" name = "adminType">
+		<xs:attribute ref="EmailAlias" use="required" />
+		<xs:attribute ref="Extension" use="optional" />
+	</xs:complexType>
+	<xs:element name = "Administrator" type = "adminType" />
+
+	<xs:simpleType name = "commentsType">
+		<xs:restriction base="xs:string">
+			<!-- Maximum length of Comments is 99 characters -->
+			<xs:maxLength value="99" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Comments" type = "commentsType" />
+
+	<!-- Declaring simpleType, so it can be used for OracleSID as well as for DatabaseAttributes -->
+	<xs:simpleType name = "reuseEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Production" />
+			<xs:enumeration value="Development" />
+			<xs:enumeration value="Testing" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- The value of OracleSID can be string Production or Development or Testing -->
+	<xs:element name="OracleSID" type="reuseEnum" />
+
+	<xs:simpleType name = "VersionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="7" />
+			<xs:enumeration value="8" />
+			<xs:enumeration value="8i" />
+			<xs:enumeration value="9i" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Reusing type -->
+	<xs:attribute name="Type" type="reuseEnum"  />
+	<xs:attribute name="Version"  default="9i" type = "VersionType" />
+	<xs:complexType name = "DatabaseAttributesType">
+		<xs:attribute ref="Type" use="required" />
+		<xs:attribute ref="Version" use="optional" />
+	</xs:complexType>
+	<xs:element name="DatabaseAttributes" type = "DatabaseAttributesType" />
+
+	<!-- <xs:complexType mixed="true" name = "GlobalDatabaseNameDomainType" /> -->
+	<xs:element name="GlobalDatabaseName" type = "xs:string" />
+
+	<xs:element name="DatabaseDomain" type = "xs:string" />
+
+	<xs:complexType name = "DatabaseNameType">
+		<xs:sequence>
+			<xs:element ref="GlobalDatabaseName" />
+			<xs:element ref="OracleSID" />
+			<xs:element ref="DatabaseDomain" />
+			<xs:element ref="Administrator" maxOccurs="3" />
+			<xs:element ref="DatabaseAttributes" />
+			<xs:element ref="Comments" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DatabaseName" type = "DatabaseNameType" />
+
+	<xs:complexType name = "DatabaseInventoryType">
+		<xs:sequence>
+			<!-- Occurunces: 1 to many -->
+			<xs:element ref="DatabaseName" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DatabaseInventory" type = "DatabaseInventoryType" />
+
+</xs:schema>

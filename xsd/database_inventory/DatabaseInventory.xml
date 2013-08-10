@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Linking xml with xsd -->
+<DatabaseInventory xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation = "DatabaseInventory.xsd">
+
+  <DatabaseName>
+    <GlobalDatabaseName>production.iDevelopment.info</GlobalDatabaseName>
+    <OracleSID>Production</OracleSID>
+    <DatabaseDomain>iDevelopment.info</DatabaseDomain>
+    <Administrator EmailAlias="jhunter" Extension="6007">Jeffrey Hunter</Administrator>
+    <DatabaseAttributes Type="Production" Version="9i"/>
+    <Comments>
+      The following database should be considered the most stable for
+      up-to-date data.
+    </Comments>
+  </DatabaseName>
+
+  <DatabaseName>
+    <GlobalDatabaseName>development.iDevelopment.info</GlobalDatabaseName>
+    <OracleSID>Development</OracleSID>
+    <DatabaseDomain>iDevelopment.info</DatabaseDomain>
+    <Administrator EmailAlias="jhunter" Extension="6007">Jeffrey Hunter</Administrator>
+    <Administrator EmailAlias="mhunter" Extension="6008">Melody Hunter</Administrator>
+    <DatabaseAttributes Type="Development" Version="9i"/>
+    <Comments>
+      The following database should contain all hosted applications.
+    </Comments>
+  </DatabaseName>
+
+  <DatabaseName>
+    <GlobalDatabaseName>testing.iDevelopment.info</GlobalDatabaseName>
+    <OracleSID>Testing</OracleSID>
+    <DatabaseDomain>iDevelopment.info</DatabaseDomain>
+    <Administrator EmailAlias="jhunter" Extension="6007">Jeffrey Hunter</Administrator>
+    <Administrator EmailAlias="mhunter" Extension="6008">Melody Hunter</Administrator>
+    <Administrator EmailAlias="ahunter">Alex Hunter</Administrator>
+    <DatabaseAttributes Type="Testing" Version="9i"/>
+    <Comments>The following database will host more than half of the testing for our hosting environment.</Comments>
+  </DatabaseName>
+
+</DatabaseInventory>
